@@ -8,8 +8,8 @@ OBJDIR = obj
 BINDIR = bin
 
 # Source files and object files explicitly listed
-SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/Tree.cpp $(SRCDIR)/ConcreteTrees.cpp $(SRCDIR)/TreeFactory.cpp $(SRCDIR)/ForestManager.cpp
-OBJS = $(OBJDIR)/main.o $(OBJDIR)/Tree.o $(OBJDIR)/ConcreteTrees.o $(OBJDIR)/TreeFactory.o $(OBJDIR)/ForestManager.o
+SRCS = $(SRCDIR)/main.cpp $(SRCDIR)/Tree.cpp $(SRCDIR)/ConcreteTrees.cpp $(SRCDIR)/TreeFactory.cpp $(SRCDIR)/ForestManager.cpp $(SRCDIR)/SimpleForest.cpp $(SRCDIR)/MemoryTracker.cpp
+OBJS = $(OBJDIR)/main.o $(OBJDIR)/Tree.o $(OBJDIR)/ConcreteTrees.o $(OBJDIR)/TreeFactory.o $(OBJDIR)/ForestManager.o $(OBJDIR)/SimpleForest.o $(OBJDIR)/MemoryTracker.o
 
 # Target executable
 TARGET = $(BINDIR)/forest_sim
@@ -42,6 +42,13 @@ $(OBJDIR)/TreeFactory.o: $(SRCDIR)/TreeFactory.cpp
 
 $(OBJDIR)/ForestManager.o: $(SRCDIR)/ForestManager.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRCDIR)/ForestManager.cpp -o $(OBJDIR)/ForestManager.o
+
+$(OBJDIR)/SimpleForest.o: $(SRCDIR)/SimpleForest.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRCDIR)/SimpleForest.cpp -o $(OBJDIR)/SimpleForest.o
+
+$(OBJDIR)/MemoryTracker.o: $(SRCDIR)/MemoryTracker.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(SRCDIR)/MemoryTracker.cpp -o $(OBJDIR)/MemoryTracker.o
+
 
 # Cleaning up
 clean:
