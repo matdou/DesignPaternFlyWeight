@@ -10,3 +10,7 @@ void* operator new(size_t size) {
 void PrintMemoryUsage() {
     std::cout << "Memory Usage: " << totalAllocatedMemory << " bytes\n";
 }
+
+void ResetMemoryUsage() {
+    totalAllocatedMemory = 0;
+}

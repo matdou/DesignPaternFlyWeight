@@ -5,7 +5,8 @@
 #include <fstream>
 
 int main()
-{
+{   
+
     ForestManager forest;
     std::vector<int> memory_y;
     std::vector<int> x_axis;
@@ -18,7 +19,6 @@ int main()
         x_axis.push_back(3 * i);
     }
 
-    //temporary code just for the graphs for the presentation
     std::ofstream outFile("data/flyweight.txt");
     if (outFile.is_open()) {
         for (size_t i = 0; i < memory_y.size(); ++i) {
@@ -27,26 +27,28 @@ int main()
         outFile.close();
     }
 
-    
+    // separator:
+    std::cout << "----------------------------------------" << std::endl;
+
+
     SimpleForest simpleForest;
-    memory_y.clear();
-    x_axis.clear();
+    std::vector<int> memory_y_2;
+    std::vector<int> x_axis_2;
+    ResetMemoryUsage();
 
     for(int i = 1; i <= 1000; i++)
     {
         simpleForest.plantTree("Oak", "Grey", "Green", 30, i, 1);
         simpleForest.plantTree("Pine", "Red-Brown", "Dark Green", 20, i, 2);
         simpleForest.plantTree("Oak", "Grey", "Green", 30, i, 3);
-        memory_y.push_back(totalAllocatedMemory);
-        x_axis.push_back(3 * i);
+        memory_y_2.push_back(totalAllocatedMemory);
+        x_axis_2.push_back(3 * i);
     }
-
-   
 
     std::ofstream outfile("data/simpleForest.txt");
     if (outfile.is_open()) {
-        for (size_t i = 0; i < memory_y.size(); ++i) {
-            outfile << x_axis[i] << " " << memory_y[i] << "\n";
+        for (size_t i = 0; i < memory_y_2.size(); ++i) {
+            outfile << x_axis[i] << " " << memory_y_2[i] << "\n";
         }
         outfile.close();
     }

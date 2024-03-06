@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 
-# Read data from the text file
+# Read data from the text files
 data = []
 data_2 = []
-#file in data folder
+
 with open('data/flyweight.txt', 'r') as file:
     for line in file:
         data.append([int(x) for x in line.strip().split()])
@@ -19,19 +19,18 @@ y_values = [item[1] for item in data]
 x_values_2 = [item[0] for item in data_2]
 y_values_2 = [item[1] for item in data_2]
 
-# Plot the graph
-plt.plot(x_values, y_values)
+# Plot both sets of data on the same graph
+plt.plot(x_values, y_values, label='Flyweight')
+plt.plot(x_values_2, y_values_2, label='Without Flyweight')
 
-plt.title('Memory Allocated (bytes) - Flyweight')
-plt.xlabel('number of trees created')
-plt.ylabel('Memory Allocated (bytes) - Flyweight')
-plt.grid(True)
-plt.show()
-
-plt.plot(x_values_2, y_values_2)
-plt.title('Memory Allocated (bytes) - Without Flyweight')
-plt.xlabel('number of trees created')
+# Adding titles and labels
+plt.title('Memory Allocated (bytes)')
+plt.xlabel('Number of Trees Created')
 plt.ylabel('Memory Allocated (bytes)')
-plt.grid(True)
-plt.show()
 
+# Show grid and legend
+plt.grid(True)
+plt.legend()
+
+# Show the plot
+plt.show()
