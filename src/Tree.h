@@ -16,6 +16,7 @@ public:
     Tree(const std::string &name, const std::string &barkColor, const std::string &leafColor, int height);
     virtual ~Tree() = default;
     virtual void draw(int x, int y) const;
+    const std::string &getName() const;
 };
 
 #endif // TREE_H

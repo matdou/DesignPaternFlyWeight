@@ -6,3 +6,7 @@ Tree::Tree(const std::string &name, const std::string &barkColor, const std::str
 void Tree::draw(int x, int y) const {
     std::cout << "Drawing a " << name << " tree with " << barkColor << " bark, " << leafColor << " leaves, and a height of " << height << " meters at position (" << x << ", " << y << ")" << std::endl;
 }
+
+const std::string &Tree::getName() const {
+    return name;
+}

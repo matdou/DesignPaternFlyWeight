@@ -14,7 +14,7 @@ public:
     size_t getTreeCount() const;
 
 private:
-    std::vector<std::pair<Tree*, std::pair<int, int>>> trees;
+    std::vector<std::pair<Tree, std::pair<int, int>>> trees;
 };
 
 #endif // SIMPLEFOREST_H

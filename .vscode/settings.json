@@ -10,5 +10,9 @@
     ],
     "makefile.buildTargets": ["all", "clean"],
     "makefile.defaultBuildTarget": "all",
-    "makefile.compileCommandsPath": "${workspaceFolder}/.vscode/compile_commands.json"
+    "makefile.compileCommandsPath": "${workspaceFolder}/.vscode/compile_commands.json",
+    "files.associations": {
+        "*.rmd": "rmd",
+        "vector": "cpp"
+    }
 }
