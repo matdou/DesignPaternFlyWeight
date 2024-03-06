@@ -6,17 +6,18 @@
 
 /// The 'Flyweight' abstract class
 class Tree {
-protected:
+   protected:
     std::string name;
     std::string barkColor;
     std::string leafColor;
     int height;
 
-public:
-    Tree(const std::string &name, const std::string &barkColor, const std::string &leafColor, int height);
+   public:
+    Tree(const std::string &name, const std::string &barkColor,
+         const std::string &leafColor, int height);
     virtual ~Tree() = default;
     virtual void draw(int x, int y) const;
     const std::string &getName() const;
 };
 
-#endif // TREE_H
+#endif  // TREE_H

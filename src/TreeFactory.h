@@ -1,15 +1,17 @@
 #ifndef TREEFACTORY_H
 #define TREEFACTORY_H
 
-#include "Tree.h"
 #include <map>
 
+#include "Tree.h"
+
 class TreeFactory {
-private:
+   private:
     std::map<std::string, Tree*> trees;
-public:
+
+   public:
     ~TreeFactory();
-    Tree* getTree(const std::string &name);
+    Tree* getTree(const std::string& name);
 };
 
-#endif // TREEFACTORY_H
+#endif  // TREEFACTORY_H

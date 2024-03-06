@@ -4,33 +4,33 @@
 #include "Tree.h"
 
 class Oak : public Tree {
-public:
+   public:
     Oak();
 };
 
 class Pine : public Tree {
-public:
+   public:
     Pine();
 };
 
 class Maple : public Tree {
-public:
+   public:
     Maple();
 };
 
 class Birch : public Tree {
-public:
+   public:
     Birch();
 };
 
 class Willow : public Tree {
-public:
+   public:
     Willow();
 };
 
 class UnsharedTree : public Tree {
-public:
+   public:
     using Tree::Tree;
 };
 
-#endif // CONCRETETREES_H
+#endif  // CONCRETETREES_H
