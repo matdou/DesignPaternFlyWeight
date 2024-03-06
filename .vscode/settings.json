@@ -1,0 +1,14 @@
+{
+    "makefile.makePath": "make",
+    "makefile.extensionOutputFolder": ".vscode",
+    "makefile.configurations": [
+        {
+            "name": "Default",
+            "problemMatchers": ["$gcc"],
+            "makeArgs": []
+        }
+    ],
+    "makefile.buildTargets": ["all", "clean"],
+    "makefile.defaultBuildTarget": "all",
+    "makefile.compileCommandsPath": "${workspaceFolder}/.vscode/compile_commands.json"
+}

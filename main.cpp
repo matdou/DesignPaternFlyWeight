@@ -1,29 +1,36 @@
 #include "ForestManager.h"
+#include "MemoryTracker.h"
 #include <iostream>
+#include <fstream>
 
-int main() {
+int main()
+{
     ForestManager forest;
+    std::vector<int> memory_y;
+    std::vector<int> x_axis;
 
-    forest.plantTree(1, 1, "Oak");
-    forest.plantTree(2, 3, "Pine");
-    forest.plantTree(3, 5, "Maple");
-    forest.plantTree(4, 7, "Maple");
-    forest.plantTree(5, 9, "Pine");
+    for (int i = 1; i <= 1000; i++) {
+        forest.plantTree(i, 1, "Oak");
+        forest.plantTree(i, 2, "Pine");
+        forest.plantTree(i, 3, "Oak");
+        memory_y.push_back(totalAllocatedMemory);
+        x_axis.push_back(3 * i);
+    }
 
-    // Demonstrate manual planting for a tree not part of the flyweight
-    forest.manualPlantTree(7, 13, "Bonzai", "Green", "Green", 1);
+    //temporary code just for the graphs for the presentation
+    std::ofstream outFile("main.txt");
+    if (outFile.is_open()) {
+        for (size_t i = 0; i < memory_y.size(); ++i) {
+            outFile << x_axis[i] << " " << memory_y[i] << "\n";
+        }
+        outFile.close();
+    }
+    //
 
-    std::cout << "\nNumber of trees in the forest: " << forest.getTreeCount() << std::endl;
+    std::cout << std::endl
+              << "Number of trees in the forest : " << forest.getTreeCount() << std::endl;
 
     forest.drawForest();
-
-    std::cout << "Press Enter to continue and delete some trees..." << std::endl;
-    std::cin.get();
-
-    forest.deleteTree(1, 1);
-    forest.deleteTree(2, 3);
-
-    std::cout << "Number of trees in the forest after deletion: " << forest.getTreeCount() << std::endl;
-
-    return 0;
+    PrintMemoryUsage();
 }
+

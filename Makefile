@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++17
 INCLUDES = -I.
-SRCS = main.cpp Tree.cpp ConcreteTrees.cpp TreeFactory.cpp ForestManager.cpp
+SRCS = main.cpp Tree.cpp ConcreteTrees.cpp TreeFactory.cpp ForestManager.cpp MemoryTracker.cpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = forest_sim
 
